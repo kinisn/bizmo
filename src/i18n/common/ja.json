@@ -1,0 +1,296 @@
+{
+    "common": {
+        "label": {
+            "success": "成功",
+            "warning": "警告",
+            "error": "エラー",
+            "info": "情報",
+            "confirm": "確認",
+            "cancel": "キャンセル",
+            "yes": "はい",
+            "no": "いいえ",
+            "ok": "OK",
+            "close": "閉じる",
+            "add": "追加",
+            "save": "保存",
+            "edit": "編集",
+            "update": "更新",
+            "delete": "削除",
+            "search": "検索",
+            "clear": "クリア",
+            "back": "戻る",
+            "backTo": "{{name}}に戻る",
+            "detail": "詳細",
+            "filter": "フィルター",
+            "total": "全",
+            "tree": "ツリー表示",
+            "list": "リスト表示",
+            "select": "選択",
+            "history": "時系列データ",
+            "date": "日付",
+            "value": "値",
+            "name": "名称",
+            "noData": "データがありません",
+            "setting": "設定",
+            "notSelected": "未選択",
+            "new": "新規",
+            "addNew": "新しく追加",
+            "addBySelection": "選択して追加",
+            "fullScreen": "全画面表示",
+            "exitFullScreen": "全画面表示を終了",
+            "dataStructure": "データ構造",
+            "viewSetting": "表示設定",
+            "width": "幅",
+            "height": "高さ",
+            "size": "サイズ",
+            "shadow": "影"
+        },
+        "message": {
+            "deleteConfirm": "削除しますか？",
+            "deleteIrreversibleConfirm": "削除すると元に戻すことはできません。<br/>本当に削除しますか？",
+            "deleteSuccess": "削除しました。",
+            "deleteError": "削除できませんでした。",
+            "saveSuccess": "保存しました。",
+            "saveError": "保存できませんでした。",
+            "updateSuccess": "更新しました。",
+            "updateError": "更新できませんでした。"
+        },
+        "validate": {
+            "required": "{{name}}を入力して下さい。",
+            "number": "数値を入力してください。",
+            "integer": "整数を入力してください。",
+            "positiveNumber": "正の数値を入力してください。",
+            "positiveInteger": "正の整数を入力してください。",
+            "negativeNumber": "負の数値を入力してください。",
+            "negativeInteger": "負の整数を入力してください。",
+            "email": "メールアドレスを入力してください。",
+            "equalTo": "同じ値を入力してください。",
+            "maxLength": "{{max}}文字以内で入力してください。",
+            "minLength": "{{min}}文字以上で入力してください。",
+            "rangeLength": "{{min}}文字以上{{max}}文字以内で入力してください。",
+            "range": "{{min}}以上{{max}}以下の値を入力してください。",
+            "max": "{{max}}以下の値を入力してください。",
+            "min": "{{min}}以上の値を入力してください。",
+            "duplicated": "既に利用されています。別の値を入力して下さい。",
+            "less": "{{less}}より小さい値を入力してください。",
+            "greater": "{{greater}}より大きい値を入力してください。",
+            "between": "{{min}}より大きく{{max}}より小さい値を入力してください。",
+            "betweenInteger": "{{min}}より大きく{{max}}より小さい整数を入力してください。",
+            "circularReference": "循環して参照されています。"
+        },
+        "hyperParamTypes": {
+            "DECIMAL": "数値",
+            "UNIFORM_DISTR": "一様分布",
+            "NORMAL_DISTR": "正規分布",
+            "TRIANGLE_DISTR": "三角分布",
+            "CUSTOM_DISTR": "カスタム分布"
+        }
+    },
+    "hyperParam": {
+        "viewTitle": "パラメータリスト",
+        "name": "名称",
+        "value": "基準値",
+        "unit": "分割数",
+        "lowerLimit": "下限値",
+        "upperLimit": "上限値",
+
+        "normalDistMean": "平均",
+        "normalDistSD": "分散",
+        "triangleDistMean": "最頻値",
+
+        "type": "タイプ",
+        "detailViewTitle": "パラメータ詳細",
+        "selected": "項目を選択中",
+
+        "splitToFixedWidth": "等間隔に分割できる数を入力して下さい。",
+        "initParamName": "パラメータ{{token}}"
+    },
+
+    "CollectionTree": {
+        "elements": "子要素",
+        "calculatedMoney": "計算金額",
+        "calculatedAmount": "計算数値",
+        "systemProvided": "システム提供"
+    },
+
+    "BizIOComponentForm": {
+        "unitComponent_amountComplement": "数量の値が設定されていない時"
+    },
+
+    "BizmoDataView": {
+        "icon": "アイコン",
+        "image": "イメージ",
+        "iconOnCanvas": "キャンバス上のアイコン",
+        "visibleOnCanvas": "キャンバスに表示"
+    },
+
+    "CommonForm": {
+        "name": "名称",
+        "type": "種別",
+        "image": "イメージ",
+        "memo": "メモ",
+        "systemProvided": "システム提供",
+        "systemProvidedMessage": "システムから提供されています。一部を編集できますが、削除することはできません。",
+        "removeMessage": "この要素と子要素をすべて削除します。",
+        "All": {
+            "label": "全種類",
+            "desc": ""
+        },
+        "BizIO": {
+            "label": "単一値",
+            "desc": "単一の値を保持します。一般的な表の1行（または1列）を構成するイメージです。"
+        },
+        "CollectionBizIO": {
+            "label": "フォルダ",
+            "desc": "複数の要素を保持し、要素を整理するために利用します。"
+        },
+        "CollectionBizIO_Calculate": {
+            "label": "計算値",
+            "desc": "要素をもとに自動的に計算した結果を、独自の値として保持します。"
+        },
+        "CollectionBizIO_TOTAL_AMOUNT": {
+            "label": "総和値",
+            "desc": "要素の総和を計算し、独自の値として保持します。"
+        },
+        "CollectionBizIO_TOTAL_MULTIPLE": {
+            "label": "総乗値",
+            "desc": "要素の総乗を計算し、独自の値として保持します。"
+        },
+        "CollectionBizIO_ACCUMULATE": {
+            "label": "累積値",
+            "desc": "要素の累積を計算し、独自の値として保持します。"
+        },
+        "RateComponent": {
+            "label": "比率値",
+            "desc": "2つだけの要素の比率を計算し、独自の値として保持します。"
+        },
+        "BizActors": {
+            "label": "事業関係者",
+            "desc": "事業の関係者として、事業活動（Biz Action）を行うことができます。さらに独自のリソースを保持することができます。"
+        },
+        "CohortComponent": {
+            "label": "コホート",
+            "desc": "コホート分析を行うための要素を保持します。"
+        },
+        "FunnelComponent": {
+            "label": "ファネル",
+            "desc": "分析したい要素を順序付けて登録すると、自動的に順序間の転換率を計算し、独自の値として保持します。"
+        },
+        "UnitComponent": {
+            "label": "構成単位",
+            "desc": "数量（A）・単位価格（B）・調整値（C）と、それらの計算値（A x B + C）を要素として保持します。"
+        }
+    },
+
+    "CommonBizIOForm": {
+        "ownValue": "値",
+        "isMonetary": "値の種類",
+        "monetary": "金額",
+        "amount": "数値",
+        "complement": "値が設定されていない時",
+        "useLast": "直前の設定値を利用する",
+        "useZero": "0を利用する",
+        "accountName": "会計科目"
+    },
+
+    "CommonCollectionBizIOForm": {
+        "summarizeMode": "集計方法",
+        "summarizeModeType": {
+            "NO_SUMMARIZE": "集計しない",
+            "TOTAL_AMOUNT": "要素の合計値",
+            "TOTAL_MULTIPLE": "要素の掛け算",
+            "TOTAL_DIVIDE": "要素の割り算",
+            "ACCUMULATE": "要素の合計値の累積値",
+            "LINEAR": "一次式",
+            "CUSTOM": "カスタム定義"
+        },
+        "summarizeModeTypeChipLabel": {
+            "ACCUMULATE": "累積値",
+            "CUSTOM": "カスタム値"
+        }
+    },
+
+    "BizComponent": {
+        "BizComponent": "事業リソース",
+        "ENVIRONMENT": "外部環境",
+        "BIZ_ACTION_PARAMS": "BizAction用パラメータ",
+        "COLLABORATORS": "仕入先・協力者",
+        "COMPANY": "企業",
+        "USERS": "顧客"
+    },
+
+    "UnitComponent": {
+        "AMOUNT": "数",
+        "VALUE": "単価",
+        "ADJUSTER": "調整値",
+        "TOTAL_VALUE": "総額"
+    },
+
+    "CompanyBizActors": {
+        "ACCOUNTING": "会計",
+        "STAFFS": "スタッフ",
+        "PRODUCTS": "製品",
+        "MATERIALS": "原材料",
+        "ASSET_EXPENSES_LIST": "固定資産・経費"
+    },
+
+    "StaffRole": {
+        "EMPLOYERS": "役員",
+        "EMPLOYEES": "従業員"
+    },
+
+    "StaffBizActors": {
+        "ADD_BY_HIRED": "新規加入",
+        "ADD_BY_MOVED": "異動加入",
+        "SUB_BY_MOVED": "異動脱退",
+        "SUB_BY_RETIRE": "退社脱退",
+        "WORKING": "稼働",
+        "WORKING_TASKS": "業務",
+        "WORKING_TIMES": "労働時間",
+        "TOTAL_VALUE": "総額"
+    },
+
+    "RateComponent": {
+        "NUMERATOR": "分子",
+        "DENOMINATOR": "分母"
+    },
+
+    "Market": {
+        "BASE_AMOUNT": "基礎値",
+        "GROWTH_RATE": "成長率"
+    },
+
+    "UserLifeCycleBizActors": {
+        "MARKET": "市場規模",
+        "FUNNEL": "ファネル"
+    },
+
+    "ListViewParts": {
+        "hierarchy": "階層"
+    },
+
+    "BizIOComponent": {
+        "addingBizIO": "追加する要素",
+        "switchView": "ツリー表示とリスト表示の切り替え",
+        "deleteMode": "削除モードの切り替え"
+    },
+
+    "FunnelComponent": {
+        "order": "分析する順序",
+        "orderLabel": "{{order}}番目"
+    },
+
+    "BizIOSelector": {
+        "selectElement": "要素の選択",
+        "detailOfElement": "要素の詳細",
+        "hasOwnValue": "値を持つ要素のみ選択可能",
+        "bizActorOnly": "事業関係者のみ選択可能"
+    },
+
+    "BizActionComponent": {
+        "relation": "概要",
+        "processor": "処理内容",
+        "priority": "期間毎の優先度",
+        "usedOnOutput": "処理内容の出力に参照されています。"
+    }
+}

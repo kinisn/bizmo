@@ -1,0 +1,275 @@
+{
+    "common": {
+        "label": {
+            "success": "Success",
+            "warning": "Warning",
+            "error": "Error",
+            "info": "Info",
+            "confirm": "Confirm",
+            "cancel": "Cancel",
+            "yes": "Yes",
+            "no": "No",
+            "ok": "OK",
+            "close": "Close",
+            "add": "Add",
+            "save": "Save",
+            "edit": "Edit",
+            "delete": "Delete",
+            "update": "Update",
+            "search": "Search",
+            "clear": "Clear",
+            "back": "Back",
+            "backTo": "Back to {{name}}",
+            "detail": "Detail",
+            "filter": "Filter",
+            "total": "Total",
+            "tree": "Tree View",
+            "list": "List View",
+            "select": "Select",
+            "notSelected": "Not selected",
+            "new": "New",
+            "addNew": "Add New",
+            "addBySelection": "Add by selection",
+            "fullScreen": "Full Screen",
+            "exitFullScreen": "Exit Full Screen",
+            "dataStructure": "Data Structure",
+            "viewSetting": "View Setting",
+            "width": "Width",
+            "height": "Height",
+            "size": "Size",
+            "shadow": "Drop shadow"
+        },
+        "message": {
+            "deleteConfirm": "Are you sure you want to delete?",
+            "deleteIrreversibleConfirm": "This operation is irreversible. Are you sure you want to delete?",
+            "deleteSuccess": "Deleted successfully.",
+            "deleteError": "Failed to delete.",
+            "saveSuccess": "Saved successfully.",
+            "saveError": "Failed to save.",
+            "updateSuccess": "Updated successfully.",
+            "updateError": "Failed to update."
+        },
+        "validate": {
+            "required": "Please enter {{name}}.",
+            "number": "Please enter a number.",
+            "integer": "Please enter an integer.",
+            "positiveNumber": "Please enter a positive number.",
+            "positiveInteger": "Please enter a positive integer.",
+            "negativeNumber": "Please enter a negative number.",
+            "negativeInteger": "Please enter a negative integer.",
+            "email": "Please enter a valid email address.",
+            "equalTo": "Please enter the same value again.",
+            "maxLength": "Please enter no more than {{max}} characters.",
+            "minLength": "Please enter at least {{min}} characters.",
+            "rangeLength": "Please enter between {{min}} and {{max}} characters.",
+            "range": "Please enter a value between {{min}} and {{max}}.",
+            "max": "Please enter a value less than or equal to {{max}}.",
+            "min": "Please enter a value greater than or equal to {{min}}.",
+            "duplicated": "Please enter another value.",
+            "less": "Please enter a value less than {{less}}.",
+            "greater": "Please enter a value greater than {{greater}}.",
+            "between": "Please enter a value between {{min}} and {{max}}.",
+            "betweenInteger": "Please enter a integer between {{min}} and {{max}}.",
+            "circularReference": "Circular reference detected."
+        },
+        "hyperParamTypes": {
+            "DECIMAL": "Number",
+            "UNIFORM_DISTR": "Uniform Distr.",
+            "NORMAL_DISTR": "Normal Distr.",
+            "TRIANGLE_DISTR": "Triangle Distr.",
+            "CUSTOM_DISTR": "Custom Distr."
+        }
+    },
+    "hyperParam": {
+        "viewTitle": "Hyper Parameter",
+        "name": "name",
+        "value": "value",
+        "bins": "number of bins",
+        "lowerLimit": "lowerLimit",
+        "upperLimit": "upperLimit",
+        "normalDistMean": "Mean",
+        "normalDistSD": "SD",
+        "triangleDistMean": "Mode",
+        "type": "type",
+        "detailViewTitle": "Hyper Parameter Detail",
+        "selected": "selected",
+        "splitToFixedWidth": "Please enter the number of evenly spaced divisions.",
+        "initParamName": "Parameter{{token}}"
+    },
+
+    "CollectionTree": {
+        "elements": "elements",
+        "calculatedMoney": "Calculated Money",
+        "calculatedAmount": "Calculated Amount",
+        "systemProvided": "System Provided"
+    },
+
+    "BizIOComponentForm": {
+        "unitComponent_amountComplement": "When the value of [Amount] is not set"
+    },
+
+    "BizmoDataView": {
+        "icon": "Icon",
+        "image": "Image",
+        "iconOnCanvas": "Icon on canvas",
+        "visibleOnCanvas": "Visible on canvas"
+    },
+
+    "CommonForm": {
+        "name": "name",
+        "type": "type",
+        "image": "image",
+        "memo": "memo",
+        "systemProvided": "System Provided",
+        "systemProvidedMessage": "It is provided by the system. It can be edited, but not deleted.",
+        "removeMessage": "Delete this element and all its children.",
+        "All": {
+            "label": "All",
+            "desc": ""
+        },
+        "BizIO": {
+            "label": "Single value",
+            "desc": "Holds a single value. This image constitutes one row (or one column) of a table."
+        },
+        "CollectionBizIO": {
+            "label": "Folder",
+            "desc": "Holds multiple values as elements."
+        },
+        "CollectionBizIO_Calculate": {
+            "label": "Calculated collection",
+            "desc": "Automatically computes the child elements and keeps the result as its own single value."
+        },
+        "BizActors": {
+            "label": "Biz. Actors",
+            "desc": "As a participant in a business, you can conduct business activities (BizAction). In addition, you can retain your own resources."
+        },
+        "RateComponent": {
+            "label": "Rate",
+            "desc": "Holds the ratio of the numerical values of two elements."
+        },
+        "CohortComponent": {
+            "label": "Cohort",
+            "desc": "Holds elements and results for cohort analysis."
+        },
+        "FunnelComponent": {
+            "label": "Funnel",
+            "desc": "Holds elements and results for funnel analysis."
+        },
+        "UnitComponent": {
+            "label": "Unit",
+            "desc": "It consists of quantity and price."
+        }
+    },
+
+    "CommonBizIOForm": {
+        "ownValue": "Value",
+        "isMonetary": "isMonetary",
+        "monetary": "monetary",
+        "amount": "amount",
+        "complement": "complement",
+        "useLast": "Use last value.",
+        "useZero": "Use zero value.",
+        "accountName": "account name"
+    },
+
+    "CommonCollectionBizIOForm": {
+        "summarizeMode": "summarize mode",
+        "summarizeModeType": {
+            "NO_SUMMARIZE": "no summarize",
+            "TOTAL_AMOUNT": "total amount",
+            "TOTAL_MULTIPLE": "total multiple",
+            "TOTAL_DIVIDE": "total divide",
+            "ACCUMULATE": "accumulate",
+            "LINEAR": "linear equation",
+            "CUSTOM": "Custom"
+        },
+        "summarizeModeTypeChipLabel": {
+            "ACCUMULATE": "Accumulate",
+            "CUSTOM": "Custom"
+        }
+    },
+
+    "BizComponent": {
+        "BizComponent": "BizComponent",
+        "ENVIRONMENT": "ENVIRONMENT",
+        "BIZ_ACTION_PARAMS": "BIZ_ACTION_PARAMS",
+        "COLLABORATORS": "COLLABORATORS",
+        "COMPANY": "COMPANY",
+        "USERS": "USERS"
+    },
+
+    "UnitComponent": {
+        "AMOUNT": "AMOUNT",
+        "VALUE": "VALUE",
+        "ADJUSTER": "ADJUSTER",
+        "TOTAL_VALUE": "TOTAL_VALUE"
+    },
+
+    "CompanyBizActors": {
+        "ACCOUNTING": "ACCOUNTING",
+        "STAFFS": "STAFFS",
+        "PRODUCTS": "PRODUCTS",
+        "MATERIALS": "MATERIALS",
+        "ASSET_EXPENSES_LIST": "ASSET_EXPENSES_LIST"
+    },
+
+    "StaffRole": {
+        "EMPLOYERS": "EMPLOYERS",
+        "EMPLOYEES": "EMPLOYEES"
+    },
+
+    "StaffBizActors": {
+        "ADD_BY_HIRED": "ADD_BY_HIRED",
+        "ADD_BY_MOVED": "ADD_BY_MOVED",
+        "SUB_BY_MOVED": "SUB_BY_MOVED",
+        "SUB_BY_RETIRE": "SUB_BY_RETIRE",
+        "WORKING": "WORKING",
+        "WORKING_TASKS": "WORKING_TASKS",
+        "WORKING_TIMES": "WORKING_TIMES",
+        "TOTAL_VALUE": "TOTAL_VALUE"
+    },
+
+    "RateComponent": {
+        "NUMERATOR": "NUMERATOR",
+        "DENOMINATOR": "DENOMINATOR"
+    },
+
+    "Market": {
+        "BASE_AMOUNT": "BASE_AMOUNT",
+        "GROWTH_RATE": "GROWTH_RATE"
+    },
+
+    "UserLifeCycleBizActors": {
+        "MARKET": "MARKET",
+        "FUNNEL": "FUNNEL"
+    },
+
+    "ListViewParts": {
+        "hierarchy": "Hierarchy"
+    },
+
+    "BizIOComponent": {
+        "addingBizIO": "Adding element",
+        "switchView": "Switch Tree / List",
+        "deleteMode": "Switch delete mode"
+    },
+
+    "FunnelComponent": {
+        "order": "Order",
+        "orderLabel": "No.{{order}}"
+    },
+
+    "BizIOSelector": {
+        "selectElement": "Select element",
+        "detailOfElement": "Detail of element",
+        "hasOwnValue": "Only elements with own value",
+        "bizActorOnly": "Only Biz. Actors"
+    },
+
+    "BizActionComponent": {
+        "relation": "Relations",
+        "processors": "Processors",
+        "priority": "Priority",
+        "usedOnOutput": "It is referenced in the output of the processing."
+    }
+}

@@ -113,51 +113,35 @@ export const useBizmo = create<BizmoStore>()((set, get) => ({
     // == Actions ==
     loadSimulator: async (name: string) => {
         // Dexieを使用してBizSimulatorをロード
-
-        await new BizmoDexieIDB()
-            .loadBizSimulator(name)
-            .then((simulator) => {
-                // set state
-                set({
-                    simulator,
-                });
+        try {
+            const simulator = await new BizmoDexieIDB().loadBizSimulator(name);
+            set({ simulator });
+            console.log(
+                'useBizmo: loadSimulator',
+                simulator.id,
+                simulator.db.graph.allNodes.length,
+                simulator
+            );
+        } catch (e) {
+            console.log('useBizmo: loadSimulator :err', e);
+            try {
+                const simulator = await initSimulator();
                 console.log(
-                    'useBizmo: loadSimulator',
+                    'useBizmo: initSimulator',
                     simulator.id,
                     simulator.db.graph.allNodes.length,
                     simulator
                 );
-            })
-            .catch((e) => {
-                const defaultSimulator = new BizSimulator<BizIOExtData>({
-                    name: 'BizSimulator',
+                set({ simulator });
+            } catch (e2) {
+                console.error('useBizmo: initSimulator failed', e2);
+                set({
+                    simulator: new BizSimulator<BizIOExtData>({
+                        name: 'BizSimulator',
+                    }),
                 });
-                console.log('useBizmo: loadSimulator :err', defaultSimulator);
-                if (true) {
-                    // debug
-                    initSimulator()
-                        .then((simulator) => {
-                            console.log(
-                                'useBizmo: initSimulator',
-                                simulator.id,
-                                simulator.db.graph.allNodes.length,
-                                simulator
-                            );
-                            set({
-                                simulator: simulator,
-                            });
-                        })
-                        .catch((e) => {
-                            set({
-                                simulator: defaultSimulator,
-                            });
-                        });
-                } else {
-                    set({
-                        simulator: defaultSimulator,
-                    });
-                }
-            });
+            }
+        }
     },
 
     // == HyperParam ==
@@ -342,17 +326,15 @@ export const useBizmo = create<BizmoStore>()((set, get) => ({
 // == Demo & Debug ==
 
 export async function initSimulator(): Promise<BizSimulator<BizIOExtData>> {
-    return new Promise(async (resolve, reject) => {
-        let simulator = new BizSimulator<BizIOExtData>({
-            name: 'BizSimulator',
-        });
-        simulator = dummyData(simulator);
-
-        // save to IDB
-        await new BizmoDexieIDB().saveBizSimulator(simulator);
-
-        resolve(simulator);
+    let simulator = new BizSimulator<BizIOExtData>({
+        name: 'BizSimulator',
     });
+    simulator = dummyData(simulator);
+
+    // save to IDB
+    await new BizmoDexieIDB().saveBizSimulator(simulator);
+
+    return simulator;
 }
 
 function dummyData(

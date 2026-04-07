@@ -122,6 +122,7 @@ export class BizSimulator<T = any> {
         return {
             id: this.id,
             name: this.name,
+            dataVersion: BIZMO_DATA_VERSION,
             timetable: this.timetable.toObject(),
             dbSortedList: dbSortedList,
             componentId: this.component.id,
@@ -130,9 +131,17 @@ export class BizSimulator<T = any> {
     }
 }
 
+/**
+ * データバージョン
+ * データ構造に互換性のない変更があった場合にインクリメントする。
+ * IDB に保存されたバージョンと一致しない場合、データを破棄して再初期化する。
+ */
+export const BIZMO_DATA_VERSION = 2;
+
 export type BizSimulatorToObject = {
     id: string;
     name: string;
+    dataVersion?: number;
     timetable: TimetableToObject;
     dbSortedList: Array<string>;
     componentId: string;

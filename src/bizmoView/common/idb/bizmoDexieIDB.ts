@@ -1,4 +1,4 @@
-import { BizSimulator, BizSimulatorToObject } from 'bizmo/BizSimulator';
+import { BIZMO_DATA_VERSION, BizSimulator, BizSimulatorToObject } from 'bizmo/BizSimulator';
 import {
     BizActionTimeline,
     BizActionTimelineToObject,
@@ -507,67 +507,61 @@ export class BizmoDexieIDB extends Dexie {
     // == BizSimulation ==
 
     async loadBizSimulator(name: string): Promise<BizSimulator<BizIOExtData>> {
-        return new Promise(async (resolve, reject) => {
-            try {
-                const simObj = await this.getBizSimulationByName(name);
-                if (simObj) {
-                    const timetable = new Timetable(simObj.timetable);
-                    //hyperMG
-                    const hyperMGObj = await this.getAllHyperParams(simObj.id);
-                    const hyperMG = new HyperParamManager(hyperMGObj);
+        const simObj = await this.getBizSimulationByName(name);
+        if (!simObj) {
+            throw new Error('not found BizSimulator');
+        }
 
-                    // db
-                    const db = await this.loadBizDatabase({
-                        simId: simObj.id,
-                        timetable: timetable,
-                        hyperMG: hyperMG,
-                    });
+        // データバージョンチェック: 古いバージョンの場合は IDB をクリアして再初期化させる
+        if (simObj.dataVersion !== BIZMO_DATA_VERSION) {
+            console.log(
+                `BizmoDexieIDB: data version mismatch (stored=${simObj.dataVersion}, current=${BIZMO_DATA_VERSION}), clearing IDB`
+            );
+            await this.delete();
+            throw new Error('data version mismatch, cleared IDB');
+        }
 
-                    // component
-                    const component = db.selectById<BizComponent<BizIOExtData>>(
-                        simObj.componentId
-                    );
+        const timetable = new Timetable(simObj.timetable);
+        const hyperMGObj = await this.getAllHyperParams(simObj.id);
+        const hyperMG = new HyperParamManager(hyperMGObj);
 
-                    // action
-                    const actionTimeline = await this.getBizActionTimeline({
-                        simId: simObj.id,
-                        timelineId: simObj.timelineId,
-                        timetable: timetable,
-                        bizmoDB: db,
-                        hyperMG,
-                    });
+        const db = await this.loadBizDatabase({
+            simId: simObj.id,
+            timetable: timetable,
+            hyperMG: hyperMG,
+        });
 
-                    const simulator = new BizSimulator<BizIOExtData>({
-                        timetable,
-                        db,
-                        hyperMG,
-                        timeline: actionTimeline,
-                        component,
-                        id: simObj.id,
-                        name: simObj.name,
-                    });
+        const component = db.selectById<BizComponent<BizIOExtData>>(
+            simObj.componentId
+        );
 
-                    // simulator
-                    resolve(simulator);
-                } else {
-                    console.error('not found BizSimulator');
-                    reject();
-                }
-            } catch (e) {
-                console.error(e);
-                reject(e);
-            }
+        const actionTimeline = await this.getBizActionTimeline({
+            simId: simObj.id,
+            timelineId: simObj.timelineId,
+            timetable: timetable,
+            bizmoDB: db,
+            hyperMG,
+        });
+
+        return new BizSimulator<BizIOExtData>({
+            timetable,
+            db,
+            hyperMG,
+            timeline: actionTimeline,
+            component,
+            id: simObj.id,
+            name: simObj.name,
         });
     }
 
     async saveBizSimulator(simulator: BizSimulator<BizIOExtData>) {
         // save  on indexedDB
-        this.putBizSimulation(simulator.toObject());
-        this.saveBizDatabase({
+        await this.putBizSimulation(simulator.toObject());
+        await this.saveBizDatabase({
             simId: simulator.id,
             bizDB: simulator.db,
         });
-        this.putBizActionTimeline({
+        await this.putBizActionTimeline({
             simId: simulator.id,
             timeline: simulator.timeline,
         });
